@@ -1,0 +1,149 @@
+a {
+  color: #6e84ca;
+  text-decoration: none;
+}
+
+.genesis-nav-menu a:focus,
+.genesis-nav-menu a:hover,
+.genesis-nav-menu .current-menu-item > a,
+.genesis-nav-menu .sub-menu .current-menu-item > a:focus,
+.genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+  color: #6e84ca;
+  text-decoration: none;
+}
+
+blockquote {
+  border-left: 2px solid #ececec;
+  padding-left: 20px;
+  /* padding-top: -0px; */
+  /* margin: 0; */
+  margin: 15px;
+}
+
+.entry {
+  background-color: #fff;
+  margin-bottom: 0;
+  padding: 20px 40px;
+}
+
+span.bbp-admin-links a.bbp-topic-reply-link,
+span.bbp-admin-links a.bbp-reply-to-link {
+  color: #739eff !important;
+  border: 1px solid #739eff;
+  padding: 10px;
+}
+
+span.bbp-admin-links a.d4p-bbt-quote-link {
+  color: #5aeaa1 !important;
+  border: 1px solid #5aeaa1;
+  padding: 10px;
+}
+
+div.bbp-reply-header {
+  padding: 15px !important;
+}
+
+.title-area {
+  width: 50% !important;
+}
+
+.title-area .site-title {
+  padding-bottom: 20px;
+}
+
+.site-header > .wrap {
+  /* padding: 20px 0; */
+  padding: 20px 20px;
+}
+
+.bbp-reply-content,
+.bbp-topic-title .bbp-topic-permalink {
+  font-size: 1.6rem;
+}
+
+.button.submit {
+  background: #739eff;
+}
+
+.button.submit:hover {
+  background: #5aeaa1;
+}
+
+div.bbp-template-notice {
+  background-color: #f8faff !important;
+  border-color: #d9e5ff !important;
+}
+
+.nav-primary {
+  background-color: #fff;
+}
+
+.nav-primary li a {
+  color: #000;
+}
+
+.nav-primary a:hover,
+.nav-primary .current-menu-item > a {
+  color: #666;
+}
+
+.nav-primary a:last-of-type {
+  padding-right: 0px;
+}
+
+.genesis-nav-menu {
+  text-align: right;
+}
+
+.site-description {
+  display: none;
+}
+
+.title-area {
+  width: 100% !important;
+}
+
+.title-area .site-title {
+  padding-bottom: 0;
+}
+
+.group-admin-name {
+  font-size: 10px !important;
+  color: blue;
+}
+
+body {
+  background-color: #f6f6f7;
+}
+
+@media only screen and (max-width: 860px) {
+  .site-inner {
+    padding: 0;
+  }
+
+  .entry {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 782px) {
+  #buddypress div#item-header-cover-image h2.group-admin-name {
+    font-size: 1.6rem !important;
+    color: blue;
+  }
+
+  .group-creator-name {
+    font-size: 1.2rem !important;
+  }
+
+  #buddypress div#item-header div#item-actions {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  span.bbp-admin-links {
+    clear: none !important;
+    float: right !important;
+  }
+}
