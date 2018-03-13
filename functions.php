@@ -50,8 +50,11 @@ function bbp_enable_visual_editor( $args = array() ) {
 
 /** Move Primary Nav Menu Above Header */
 
+
 // remove_action( 'genesis_after_header', 'genesis_do_nav' );
 // add_action( 'genesis_before_header', 'genesis_do_nav' );
+
+
 
 add_filter( 'bbp_after_get_the_content_parse_args', 'bbp_enable_visual_editor' );
 
