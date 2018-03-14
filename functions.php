@@ -140,6 +140,14 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 // Add Image Sizes.
 add_image_size( 'featured-image', 720, 400, TRUE );
 
+
+add_image_size('mobile', 320, 480, array( 'left', 'top' )); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+
+
+
+
+remove_action('genesis_after_header', 'genesis_do_nav');
+add_action( 'genesis_header', 'genesis_do_nav' );
 // Rename primary and secondary navigation menus.
 add_theme_support( 'genesis-menus', array( 'primary' => __( 'After Header Menu', 'genesis-sample' ), 'secondary' => __( 'Footer Menu', 'genesis-sample' ) ) );
 

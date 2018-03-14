@@ -7,6 +7,10 @@ a {
   text-decoration: none;
 }
 
+:focus {
+  outline: none !important;
+}
+
 .genesis-nav-menu a:focus,
 .genesis-nav-menu a:hover,
 .genesis-nav-menu .current-menu-item > a,

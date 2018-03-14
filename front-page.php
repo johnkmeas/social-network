@@ -23,13 +23,22 @@
 // function genesis_sample_dequeue_skip_links() {
 //     wp_dequeue_script( 'skip-links' );
 // }
-remove_action('genesis_after_header', 'genesis_do_nav');
-add_action( 'genesis_header', 'genesis_do_nav' );
+// remove_action('genesis_after_header', 'genesis_do_nav');
+// add_action( 'genesis_header', 'genesis_do_nav' );
 // Force full width content layout.
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
 // Remove default page title
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+
+//* Add class to .site-container
+add_filter('genesis_attr_site-header', 'fnsa_attr_home_page');
+function fnsa_attr_home_page($attributes) {
+    $attributes['class'] .= ' home-page';
+    return $attributes;
+}
+
+
 
 
 add_action( 'genesis_after_header', 'fnsa_hero_entry_header' );
@@ -47,7 +56,11 @@ function fnsa_hero_entry_header() {
                     <a class="button" href="<?php echo wp_login_url( $redirect ); ?>">Login</a>
                 </div>
             </div>
-            <img class="hero-image above-post-hero" src="<?php echo $hero['background_image']['url']; ?>" alt="<?php echo $hero['background_image']['alt']; ?>" />
+            <div class="hero-image-container">
+                <img class="bg-image-desktop above-post-hero" src="<?php echo $hero['background_image']['url']; ?>" alt="<?php echo $hero['background_image']['alt']; ?>" />
+                <img class="bg-image-mobile above-post-hero" src="<?php echo $hero['background_image']['sizes']['mobile']; ?>" alt="<?php echo $hero['background_image']['alt']; ?>" />
+            </div>
+
         </div>
 
     <?php endif;
@@ -91,19 +104,27 @@ function fnsa_entry_content() {
     <?php
 }
 
-add_action('genesis_entry_content', 'fnsa_action_entry_content');
+add_action('genesis_before_footer', 'fnsa_action_entry_content');
 
 function fnsa_action_entry_content() {
 
-    $action = get_field('call_to_action_section');
+$action = get_field('call_to_action_section');
 
     if( $action ): ?>
         <div class="hero-content">
-            <div><?php echo $action['heading'] ?></div>
-            <a class="button" href="<?php echo get_permalink( get_page_by_path( 'register' ) ) ?>">register</a>
-            <a class="button" href="<?php echo wp_login_url( $redirect ); ?>">Login</a>
+            <div class="hero-copy">
+                <div><?php echo $action['heading'] ?></div>
+                <div class="button-group">
+                    <a class="button" href="<?php echo get_permalink( get_page_by_path( 'register' ) ) ?>">register</a>
+                    <a class="button" href="<?php echo wp_login_url( $redirect ); ?>">Login</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img class="bg-image-desktop above-post-hero" src="<?php echo $action['background_image']['url']; ?>" alt="<?php echo $action['background_image']['alt']; ?>" />
+                <img class="bg-image-mobile above-post-hero" src="<?php echo $action['background_image']['sizes']['mobile']; ?>" alt="<?php echo $action['background_image']['alt']; ?>" />
+            </div>
+
         </div>
-        <img class="hero-image" src="<?php echo $action['background_image']['url']; ?>" alt="<?php echo $action['background_image']['alt']; ?>" />
     <?php endif;
 }
 

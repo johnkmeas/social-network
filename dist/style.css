@@ -1719,6 +1719,10 @@ a {
   text-decoration: none;
 }
 
+:focus {
+  outline: none !important;
+}
+
 .genesis-nav-menu a:focus,
 .genesis-nav-menu a:hover,
 .genesis-nav-menu .current-menu-item > a,
@@ -1786,10 +1790,6 @@ body {
   background-color: #f6f6f7;
 }
 
-.title-area {
-  width: 50% !important;
-}
-
 .title-area .site-title {
   padding-bottom: 20px;
 }
@@ -1810,6 +1810,26 @@ body {
 
 .nav-primary a:last-of-type {
   padding-right: 0px;
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .special-heading {
@@ -1833,10 +1853,6 @@ body {
   display: none;
 }
 
-.title-area {
-  width: 100% !important;
-}
-
 .title-area .site-title {
   padding-bottom: 0;
 }
@@ -1858,6 +1874,12 @@ body {
   margin: 25% 0;
 }
 
+@media only screen and (min-width: 769px) {
+  .bg-image-mobile {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .site-title {
     font-size: 2.4rem;
@@ -1865,7 +1887,6 @@ body {
 
   .site-header {
     background-color: #ffffff00;
-    position: absolute;
     width: 100%;
   }
 
@@ -1873,15 +1894,16 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     padding: 0;
     width: 100%;
   }
 
+  .site-header.home-page {
+    position: absolute;
+  }
+
   .nav-primary {
-    background-color: #ffffff00;
+    background-color: #458a87 !important;
   }
 
   .title-area {
@@ -1897,6 +1919,11 @@ body {
   .nav-primary {
     width: 100%;
     border-top: none;
+  }
+
+  .header-full-width .title-area {
+    /* float: left; */
+    width: auto !important;
   }
 }
 
@@ -2158,6 +2185,28 @@ body {
   .footer-widgets-2 {
     margin: 0 auto 40px;
   }
+
+  .site-header {
+    background-color: #458a87 !important;
+  }
+
+  .site-header .wrap {
+    padding: 0;
+  }
+
+  .menu-toggle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .menu-toggle,
+  .menu-toggle:active,
+  .menu-toggle:focus,
+  .menu-toggle:hover {
+    background-color: #458a87 !important;
+    border-top: none;
+  }
 }
 
 @media only screen and (max-width: 860px) {
@@ -2236,6 +2285,16 @@ body {
 
   #buddypress div#item-header div#item-actions {
     width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bg-image-mobile {
+    width: 100%;
+  }
+
+  .bg-image-desktop {
+    display: none;
   }
 }
 
