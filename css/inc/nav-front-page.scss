@@ -1,0 +1,114 @@
+$transparent: #ffffff00;
+
+
+.title-area {
+    width: 50% !important;
+    .site-title {
+        padding-bottom: 20px;
+    }
+}
+
+
+.site-header > .wrap {
+    /* padding: 20px 0; */
+    padding: 20px 20px;
+}
+// .bbp-admin-links,
+// .bbp-reply-to-link,
+// .d4p-bbt-quote-link {
+//     color: $link-color;
+//     text-decoration: none;
+// }
+
+
+.nav-primary li a{
+    color:#000;
+}
+.nav-primary a:hover, .nav-primary .current-menu-item > a {
+    color:#666;
+}
+.nav-primary a:last-of-type {
+    padding-right:0px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .site-title {
+        font-size: 2.4rem;
+    }
+    .site-header {
+        background-color: $transparent;
+        position: absolute;
+        width: 100%;
+        .wrap {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            width: 100%;
+        }
+    }
+    .nav-primary {
+        background-color: $transparent;
+    }
+
+
+    .title-area {
+        align-items: center;
+        display: flex;
+        width: 100%;
+
+    }
+    .nav-primary {
+        width: 100%;
+        border-top: none;
+    }
+
+}
+
+.special-heading {
+    text-align: center;
+    >p {
+        margin: 0;
+    }
+}
+
+.special-heading-credit {
+    text-align: center;
+    font-size: 1.2rem;
+}
+.genesis-nav-menu {
+    text-align: right;
+}
+
+.site-description {
+    display: none;
+}
+.title-area {
+    width: 100% !important;
+    .site-title {
+        padding-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .site-inner {
+        padding: 0;
+    }
+    .entry {
+        padding: 15px;
+    }
+}
+
+.hero-copy {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    /* margin: 0 auto; */
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin: 25% 0;
+}
+
+
+

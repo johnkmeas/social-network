@@ -32,7 +32,7 @@ add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 
 
-add_action( 'genesis_entry_header', 'fnsa_hero_entry_header' );
+add_action( 'genesis_after_header', 'fnsa_hero_entry_header' );
 
 function fnsa_hero_entry_header() {
 
@@ -40,13 +40,16 @@ function fnsa_hero_entry_header() {
 
     if( $hero ): ?>
         <div class="hero-content">
-            <div><?php echo $hero['heading'] ?></div>
-            <a class="button" href="<?php echo get_permalink( get_page_by_path( 'register' ) ) ?>">register</a>
-            <a class="button" href="<?php echo wp_login_url( $redirect ); ?>">Login</a>
-
-
+            <div class="hero-copy">
+                <div><?php echo $hero['heading'] ?></div>
+                <div class="button-group">
+                    <a class="button" href="<?php echo get_permalink( get_page_by_path( 'register' ) ) ?>">register</a>
+                    <a class="button" href="<?php echo wp_login_url( $redirect ); ?>">Login</a>
+                </div>
+            </div>
+            <img class="hero-image above-post-hero" src="<?php echo $hero['background_image']['url']; ?>" alt="<?php echo $hero['background_image']['alt']; ?>" />
         </div>
-        <img class="hero-image" src="<?php echo $hero['background_image']['url']; ?>" alt="<?php echo $hero['background_image']['alt']; ?>" />
+
     <?php endif;
 }
 
@@ -54,28 +57,36 @@ add_action('genesis_entry_content', 'fnsa_entry_content');
 
 function fnsa_entry_content() {
  ?>
-    <div class="main-content">
-        <div><?php the_field('heading'); ?></div>
-        <i><?php the_field('heading_credit'); ?></i>
+    <section class="main-content container">
+        <div class="full-main-heading row">
+            <div class="special-heading col-lg-12"><?php the_field('heading'); ?></div>
+            <i class="special-heading-credit col-lg-12">-<?php the_field('heading_credit'); ?></i>
+        </div>
         <?php
         // check if the repeater field has rows of data
         if( have_rows('information') ):
-
+            ?>
+            <div class="row">
+            <?php
             // loop through the rows of data
             while ( have_rows('information') ) : the_row();
-
-                // display a sub field value
-                the_sub_field('copy');
+            ?>
+                <div class="col-lg-6">
+                    <?php the_sub_field('copy'); ?>
+                </div>
+                <?php
 
             endwhile;
 
-        else :
+            else :
 
             // no rows found
-
+            ?>
+            </div>
+            <?php
         endif;
          ?>
-    </div>
+    </section>
 
     <?php
 }

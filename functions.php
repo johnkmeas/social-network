@@ -48,6 +48,15 @@ function bbp_enable_visual_editor( $args = array() ) {
     return $args;
 }
 
+
+// Update Jquery to 3.1.1
+function replace_core_jquery_version() {
+    wp_deregister_script( 'jquery' );
+    // Change the URL if you want to load a local copy of jQuery from your own server.
+    wp_register_script('jquery', get_stylesheet_directory_uri() . '/node_modules/jquery/dist/jquery.js', array(), '3.1.1');
+
+}
+add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
 /** Move Primary Nav Menu Above Header */
 
 
