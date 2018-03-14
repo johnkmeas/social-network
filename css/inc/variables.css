@@ -116,6 +116,38 @@ body {
   background-color: #f6f6f7;
 }
 
+@media only screen and (min-width: 1024px) {
+  .site-title {
+    font-size: 2.4rem;
+  }
+
+  .site-header .wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+  }
+
+  .title-area {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+
+  .nav-primary {
+    width: 100%;
+    border-top: none;
+  }
+}
+
 @media only screen and (max-width: 860px) {
   .site-inner {
     padding: 0;
