@@ -49,11 +49,13 @@ function fnsa_hero_entry_header() {
 
     if( $hero ): ?>
         <div class="hero-content">
-            <div class="hero-copy">
-                <div><?php echo $hero['heading'] ?></div>
-                <div class="button-group">
-                    <a class="button" href="<?php echo get_permalink( get_page_by_path( 'register' ) ) ?>">register</a>
-                    <a class="button" href="<?php echo wp_login_url( $redirect ); ?>">Login</a>
+            <div class="hero-copy container-fluid">
+                <div class="row">
+                    <div class="col-lg-12"><?php echo $hero['heading'] ?></div>
+                    <div class="button-group col-lg-12">
+                        <a class="button" href="<?php echo get_permalink( get_page_by_path( 'register' ) ) ?>">register</a>
+                        <a class="button" href="<?php echo wp_login_url( $redirect ); ?>">Login</a>
+                    </div>
                 </div>
             </div>
             <div class="hero-image-container">
@@ -112,16 +114,19 @@ $action = get_field('call_to_action_section');
 
     if( $action ): ?>
         <div class="hero-content">
-            <div class="hero-copy">
-                <div><?php echo $action['heading'] ?></div>
-                <div class="button-group">
-                    <a class="button" href="<?php echo get_permalink( get_page_by_path( 'register' ) ) ?>">register</a>
-                    <a class="button" href="<?php echo wp_login_url( $redirect ); ?>">Login</a>
+            <div class="hero-copy container-fluid">
+                <div class="row">
+                    <div class="hero-image-container">
+                        <img class="bg-image-desktop above-post-hero" src="<?php echo $action['background_image']['url']; ?>" alt="<?php echo $action['background_image']['alt']; ?>" />
+                        <img class="bg-image-mobile above-post-hero" src="<?php echo $action['background_image']['sizes']['mobile']; ?>" alt="<?php echo $action['background_image']['alt']; ?>" />
+                    </div>
+                    <div class="col-lg-12"><?php echo $action['heading'] ?></div>
+                    <div class="col-lg-12 button-group">
+                        <a class="button" href="<?php echo get_permalink( get_page_by_path( 'register' ) ) ?>">register</a>
+                        <a class="button" href="<?php echo wp_login_url( $redirect ); ?>">Login</a>
+                    </div>
+
                 </div>
-            </div>
-            <div class="hero-image-container">
-                <img class="bg-image-desktop above-post-hero" src="<?php echo $action['background_image']['url']; ?>" alt="<?php echo $action['background_image']['alt']; ?>" />
-                <img class="bg-image-mobile above-post-hero" src="<?php echo $action['background_image']['sizes']['mobile']; ?>" alt="<?php echo $action['background_image']['alt']; ?>" />
             </div>
 
         </div>

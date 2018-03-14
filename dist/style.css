@@ -1886,7 +1886,7 @@ body {
   }
 
   .site-header {
-    background-color: #ffffff00;
+    background-color: #458a87 !important;
     width: 100%;
   }
 
@@ -1903,7 +1903,9 @@ body {
   }
 
   .nav-primary {
-    background-color: #458a87 !important;
+    background-color: #ffffff00;
+    width: 100%;
+    border-top: none;
   }
 
   .title-area {
@@ -1914,11 +1916,6 @@ body {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-  }
-
-  .nav-primary {
-    width: 100%;
-    border-top: none;
   }
 
   .header-full-width .title-area {

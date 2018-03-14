@@ -65,7 +65,7 @@ $nav-color: #458a87;
         font-size: 2.4rem;
     }
     .site-header {
-        background-color: $transparent;
+        background-color: $nav-color !important;
         // position: absolute;
         width: 100%;
         .wrap {
@@ -83,7 +83,9 @@ $nav-color: #458a87;
     }
 
     .nav-primary {
-        background-color: $nav-color !important;
+        background-color: $transparent;
+        width: 100%;
+        border-top: none;
     }
 
 
@@ -92,10 +94,6 @@ $nav-color: #458a87;
         display: flex;
         width: 100%;
 
-    }
-    .nav-primary {
-        width: 100%;
-        border-top: none;
     }
 
     .header-full-width .title-area {

@@ -54,6 +54,10 @@ function replace_core_jquery_version() {
     wp_deregister_script( 'jquery' );
     // Change the URL if you want to load a local copy of jQuery from your own server.
     wp_register_script('jquery', get_stylesheet_directory_uri() . '/node_modules/jquery/dist/jquery.js', array(), '3.1.1');
+	wp_register_script('all', get_stylesheet_directory_uri() . '/dist/all.js', array('jquery'), '1');
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('all');
+    // wp_register_script('bootstrapjs',  get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.js', array('jquery'),'4.0', true);
 
 }
 add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );

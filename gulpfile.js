@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const groupmq = require('gulp-group-css-media-queries');
 const concatCss = require('gulp-concat-css');
+const concat = require('gulp-concat');
 // const bs = require('browser-sync');bs
 const sassLint = require('gulp-sass-lint');
 
@@ -38,14 +39,23 @@ gulp.task('compile:sass', ['lint:sass'], () =>
 
 
 gulp.task('compile:css',  () => {
-  return gulp.src(['./dist/style.css', './node_modules/bootstrap/dist/css/bootstrap-grid.css'])
+  return gulp.src(['./dist/style.css', './node_modules/bootstrap/dist/css/bootstrap.css'])
     .pipe(concatCss("./style.css"))
     .pipe(gulp.dest('./'));
 });
+
+gulp.task('compile:js', function() {
+  return gulp.src([ './node_modules/bootstrap/dist/js/bootstrap.js', './js/script.js' ])
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('./dist/'));
+});
+
+
+
 /**
  * Start up browserSync and watch Sass files for changes
  */
-gulp.task('watch:sass', ['compile:sass', 'compile:css'], () => {
+gulp.task('watch:sass', ['compile:sass', 'compile:css', 'compile:js'], () => {
   // bs.init({
   //   proxy: 'http://wp.docker.localhost:8000/'
   // });
