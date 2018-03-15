@@ -1,0 +1,50 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #f6f6f7;
+$link-color: #6e84ca;
+
+$blue: #739eff;
+$md-blue: lighten($blue, 20%);
+$lt-blue: lighten($blue, 26%);
+$green: #5aeaa1;
+$turq: #09e9ff;
+
+$quote: #e0815e;
+$transparent: #ffffff00;
+$off-wht: #eee;
+
+.button {
+    border-radius: 6px;
+
+    &.login {
+        background: $transparent;
+        border: 1px solid $turq;
+        color: $turq !important;
+    }
+
+    &.register {
+        background: $turq;
+
+    }
+
+    &.login:hover,
+    &.register:hover {
+        background: $green;
+        border: none;
+        color: $off-wht !important;
+    }
+}
+
+.button-group {
+    .button {
+        padding: 1.6rem 4rem !important;
+        margin: 1rem;
+    }
+
+}
+.button.submit {
+    background: $blue;
+
+    &:hover {
+        background: $green;
+    }
+}

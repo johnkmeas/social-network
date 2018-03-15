@@ -1,0 +1,128 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #f6f6f7;
+$link-color: #6e84ca;
+
+$blue: #739eff;
+$md-blue: lighten($blue, 20%);
+$lt-blue: lighten($blue, 26%);
+$green: #5aeaa1;
+$turq: #09e9ff;
+
+
+
+
+$transparent: #ffffff00;
+$trans-wht: #ffffff54;
+$nav-color: #458a87;
+
+$nav-link-color: white;
+
+
+.site-header > .wrap {
+    /* padding: 20px 0; */
+    padding: 20px 20px;
+}
+
+.title-area {
+    // width: 50% !important;
+    .site-title {
+        padding-bottom: 20px;
+
+    }
+}
+
+.site-title a {
+    padding-bottom: 20px;
+    color: $nav-link-color !important;
+}
+
+.nav-primary li a{
+    color:#000;
+}
+.nav-primary a:hover,
+.nav-primary .current-menu-item > a {
+    color: $blue !important;
+}
+.nav-primary a:last-of-type {
+    padding-right:0px;
+}
+@media only screen and (max-width: 1023px) {
+    .site-header {
+        background-color: $nav-color !important;
+    }
+    .site-header .wrap {
+
+        padding: 0;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .menu-toggle,
+    .menu-toggle:active,
+    .menu-toggle:focus,
+    .menu-toggle:hover {
+        background-color: $nav-color !important;
+        border-top: none;
+    }
+    // .genesis-responsive-menu,
+    // .nav-primary,
+    // {
+    //     opacity: 0;
+    //     animation: fadein 5s;
+    // }
+}
+
+.genesis-nav-menu {
+    text-align: right;
+}
+
+.site-description {
+    display: none;
+}
+.title-area {
+    // width: 100% !important;
+    .site-title {
+        padding-bottom: 0;
+        color: white;
+    }
+}
+.nav-primary a:hover,
+.nav-primary .current-menu-item > a {
+    color: $turq !important;
+}
+@media only screen and (min-width: 1024px) {
+    .site-title {
+        font-size: 2.4rem;
+    }
+    .nav-primary li a {
+        color: $nav-link-color !important;
+    }
+    .site-header {
+        background-color: $nav-color !important;
+        // position: absolute;
+        width: 100%;
+        .wrap {
+            display: flex;
+            // justify-content: space-between;
+            padding: 0;
+            width: 100%;
+        }
+        &.home-page {
+            // position: absolute;
+            // margin-bottom: 10rem;
+        }
+        // & .home-page {
+        //     position: absolute;
+        // }
+    }
+
+
+    .nav-primary {
+        background-color: $transparent;
+        width: 100%;
+        border-top: none;
+    }
+}
+
+
+

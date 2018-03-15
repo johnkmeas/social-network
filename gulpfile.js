@@ -39,7 +39,7 @@ gulp.task('compile:sass', ['lint:sass'], () =>
 
 
 gulp.task('compile:css',  () => {
-  return gulp.src(['./dist/style.css', './node_modules/bootstrap/dist/css/bootstrap.css'])
+  return gulp.src(['./dist/style.css', './node_modules/bootstrap/dist/css/bootstrap-grid.css'])
     .pipe(concatCss("./style.css"))
     .pipe(gulp.dest('./'));
 });

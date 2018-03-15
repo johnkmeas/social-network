@@ -1,0 +1,33 @@
+.button {
+  border-radius: 6px;
+}
+
+.button.login {
+  background: #ffffff00;
+  border: 1px solid #09e9ff;
+  color: #09e9ff !important;
+}
+
+.button.register {
+  background: #09e9ff;
+}
+
+.button.login:hover,
+.button.register:hover {
+  background: #5aeaa1;
+  border: none;
+  color: #eee !important;
+}
+
+.button-group .button {
+  padding: 1.6rem 4rem !important;
+  margin: 1rem;
+}
+
+.button.submit {
+  background: #739eff;
+}
+
+.button.submit:hover {
+  background: #5aeaa1;
+}

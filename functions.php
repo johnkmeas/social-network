@@ -55,9 +55,10 @@ function replace_core_jquery_version() {
     // Change the URL if you want to load a local copy of jQuery from your own server.
     wp_register_script('jquery', get_stylesheet_directory_uri() . '/node_modules/jquery/dist/jquery.js', array(), '3.1.1');
 	wp_register_script('all', get_stylesheet_directory_uri() . '/dist/all.js', array('jquery'), '1');
+
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('all');
-    // wp_register_script('bootstrapjs',  get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.js', array('jquery'),'4.0', true);
+
 
 }
 add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
@@ -132,6 +133,34 @@ add_theme_support( 'custom-header', array(
 	'flex-height'     => true,
 ) );
 
+
+// Do NOT include the opening php tag.
+// Remove site footer.
+remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
+
+
+remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+
+
+add_action( 'genesis_footer', 'genesis_footer_widget_areas' );
+
+// Customize site footer
+add_action( 'genesis_footer', 'sp_custom_footer' );
+function sp_custom_footer() { ?>
+
+    <div class="site-footer">
+    	<div class="wrap">
+    		<p>Handcrafted with <span class="dashicons dashicons-heart"></span>
+    			by John Meas
+    			<a href="https://www.meerkatstudio.ca">@ www.meerkatstudio.ca</a>.
+    		</p>
+    	</div>
+    </div>
+
+<?php
+}
 // Add support for custom background.
 add_theme_support( 'custom-background' );
 
@@ -143,9 +172,9 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 
 // Add Image Sizes.
 add_image_size( 'featured-image', 720, 400, TRUE );
-
-
-add_image_size('mobile', 320, 480, array( 'left', 'top' )); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+add_image_size('hero', 1440, 700, array( 'left', 'top' ));
+add_image_size('hero-narrow', 1440, 600, array( 'left', 'top' )); // Custom Thumbnail Size
+add_image_size('mobile', 320, 480, array( 'center', 'top' )); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
 
 

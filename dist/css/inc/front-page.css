@@ -3,6 +3,10 @@
   background-repeat: no-repeat;
 }
 
+.home-page .entry {
+  background-color: #ffffff00 !important;
+}
+
 .special-heading {
   text-align: center;
 }
@@ -91,5 +95,9 @@
 @media only screen and (max-width: 480px) {
   .special-heading * {
     padding: 0 !important;
+  }
+
+  .hero-copy {
+    padding: 15rem 0;
   }
 }
