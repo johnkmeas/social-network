@@ -2,6 +2,8 @@ $transparent: #ffffff00;
 $trans-wht: #ffffff54;
 $nav-color: #458a87;
 $off-wht: #eee;
+
+
 .hero-content {
     background-size: cover;
     background-repeat: no-repeat;
@@ -9,37 +11,6 @@ $off-wht: #eee;
 .home-page {
     .entry {
         background-color: $transparent !important;
-    }
-}
-@media only screen and (max-width: 1023px) {
-    .full-main-heading {
-        padding-bottom: 3rem;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .full-main-heading {
-        padding-bottom: 10rem;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-
-
-
-    .title-area {
-        align-items: center;
-        display: flex;
-        width: 100%;
-
-    }
-
-    .header-full-width .title-area {
-        /* float: left; */
-        // width: auto !important;
-    }
-    .custom-main-padding {
-        padding: 10rem;
     }
 }
 
@@ -57,15 +28,6 @@ $off-wht: #eee;
 }
 
 
-@media only screen and (max-width: 860px) {
-    .site-inner {
-        padding: 0;
-    }
-    .entry {
-        padding: 15px;
-    }
-}
-
 .hero-copy {
     // position: absolute;
     width: 100%;
@@ -79,6 +41,45 @@ $off-wht: #eee;
 }
 
 
+// Responsive
+
+@media only screen and (max-width: 1023px) {
+    .full-main-heading {
+        padding-bottom: 3rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .full-main-heading {
+        padding-bottom: 10rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .title-area {
+        align-items: center;
+        display: flex;
+        width: 100%;
+
+    }
+
+    .header-full-width .title-area {
+        /* float: left; */
+        // width: auto !important;
+    }
+    .custom-main-padding {
+        padding: 10rem;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .site-inner {
+        padding: 0;
+    }
+    .entry {
+        padding: 15px;
+    }
+}
 
 @media only screen and (max-width: 768px) {
     .bg-image-mobile {
